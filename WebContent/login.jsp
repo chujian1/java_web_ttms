@@ -2,7 +2,7 @@
 <html>
 <head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isErrorPage="false" errorPage="error.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>login</title>
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
         <h1 style="text-align:center;">初见TTMS</h1>
     </div>
     <div class="container-fluid" style="border:solid black ;width:25%;margin-top:70px;">
-        <form action="studio.jsp" method="post" name="form" class="form-horizontal" style="padding:20px;" onclick="return check()" >
+        <form action="Login" method="post" name="form" class="form-horizontal" style="padding:20px;">
             <div class="form-group">
                 <label type="text" for="inputUser" class="col-sm-2 control-label">User</label>
                 <div class="col-sm-offset-1 col-sm-8">

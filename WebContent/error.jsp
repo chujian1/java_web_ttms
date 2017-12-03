@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="5;URL=http://localhost:8080/java_web_ttms/index.jsp">
+<meta http-equiv="refresh" content="5;URL=http://localhost:8080/java_web_ttms/login.jsp">
 <title>十分抱歉，您要查看的网页当前已过期，或已被更名或删除！</title>
 <STYLE type=text/css>INPUT {
     FONT-SIZE: 12px
@@ -58,7 +58,7 @@ A:hover {
 width=7></TD>
           <TD background="<%=request.getContextPath()%>/image/error-bg.gif">
             <DIV align=center><FONT class=p6><A
-            href="http://localhost:8080/test/index.jsp">返回首页</A>　 　|　　 <A
+            href="http://localhost:8080/java_web_ttms/login.jsp">返回首页</A>　 　|　　 <A
             href="javascript:history.go(-1)">返回出错页</A>　 　|　　 <A
             href="#" onclick="window.close()">关闭本页</A></FONT> </DIV></TD>
           <TD width=7><IMG

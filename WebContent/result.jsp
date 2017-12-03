@@ -16,6 +16,13 @@ out.println("<br>");
 out.println("密码:" + request.getAttribute("pass"));
 out.println("<br>");
 %>
+<%
+out.println(request.getMethod() +"<br>");
+//request.setCharacterEncoding("UTF-8");
+String name=request.getParameter("name");
+out.println(name);
+%>
+
 <br>
 EL表达式接收：<br>
 session值: ${loginflag}<br>

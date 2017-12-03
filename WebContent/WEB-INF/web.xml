@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>java_web_ttms</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+        <!-- 普通Servlet -->
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>java_web_ttms.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 开机启动Servlet -->
+    <servlet>
+        <servlet-name>StartServlet</servlet-name>
+        <servlet-class>java_web_ttms.StartServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <!-- 带初始化参数Servlet -->
+    <servlet>
+        <servlet-name>GetParamServlet</servlet-name>
+        <servlet-class>java_web_ttms.GetParamServlet</servlet-class>
+        <init-param>
+            <param-name>dbname</param-name>
+            <param-value>MySQL</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbversion</param-name>
+            <param-value>8.0</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetParamServlet</servlet-name>
+        <url-pattern>/GetParamServlet</url-pattern>
+    </servlet-mapping>
+      
+    
+  
+</web-app>

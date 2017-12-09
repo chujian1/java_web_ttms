@@ -1,16 +1,16 @@
 package service;
 
 import idao.DAOFactory;
-import idao.UserIDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import model.UserMODEL;
+import dao.UserDAO;
 
 public class UserSrv
 {
-    private UserIDAO userDAO = DAOFactory.creatUserDAO();
+    private UserDAO userDAO = DAOFactory.creatUserDAO();
 
     public boolean add(UserMODEL user)
     {

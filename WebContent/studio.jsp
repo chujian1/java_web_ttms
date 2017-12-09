@@ -40,7 +40,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Stdio Name...">
                             <span class="input-group-btn">
-                            <button class="btn btn-default">
+                            <button class="btn btn-default" onclick="search()">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </span>
@@ -54,17 +54,16 @@
             <table class="table table-hover" id="myTable">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Level</th>
-                    <th>Rows</th>
-                    <th>Cels</th>
-                    <th>delete</th>
-                    <th>edit</th>
+                    <th>名称</th>
+                    <th>行数</th>
+                    <th>列数</th>
+                    <th>介绍</th>
+                    <th>删除</th>
+                    <th>编辑</th>
                 </tr>
                 </thead>
                 <tbody id="listTable">
-                <tr>
+                <!-- <tr>
                     <td>1号厅</td>
                     <td>空闲</td>
                     <td>VIP</td>
@@ -117,7 +116,7 @@
                     <td>12</td>
                     <td><button type="button" class="btn btn-info btn-sm" onclick="del(this)"><span class="glyphicon glyphicon-remove"></span></button></td>
                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="edit(this)"><span class="glyphicon glyphicon-edit"></span></button></td>
-                </tr>
+                </tr> -->
                 </tbody>
             </table>
         </div>

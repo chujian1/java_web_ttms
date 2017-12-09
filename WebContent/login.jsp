@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label type="text" for="inputUser" class="col-sm-2 control-label">User</label>
                 <div class="col-sm-offset-1 col-sm-8">
-                    <input type="text" class="form-control" name="user" id="inputUser" placeholder="User" required autofocus>
+                    <input type="text" class="form-control" name="user" id="inputUser" placeholder="User"  required autofocus><span id="tip"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -30,8 +30,10 @@
                 <button type="submit" value="提交" class="btn btn-primary ">Sign in</button>
             </div>
         </form>
+        <div> ${desc}</div>
     </div>
-    ${desc}
+    
+   
 <script type="text/javascript" src="./js/login.js"></script>
 <script src="./bootstrap/js/jquery.min.js"></script>
 <script src="./bootstrap/js/bootstrap.min.js"></script>

@@ -1,4 +1,4 @@
-package idao;
+﻿package idao;
 
 import java.util.ArrayList;
 
@@ -19,8 +19,8 @@ public interface StudioIDAO
     public ArrayList<StudioMODEL> findStudioAll();
 
     // 根据演出厅id查
-    public ArrayList<StudioMODEL> findStudioById(String studioId);
+    public StudioMODEL findStudioById(int studioId);
 
-    // 根据演出厅flag查(一般用于数据内部关联操作)
-    public StudioMODEL findStudioByFlag(int flag);
+    // 根据演出厅名查(一般用于和界面交互)
+    public ArrayList<StudioMODEL> findStudioByName(String studioName);
 }

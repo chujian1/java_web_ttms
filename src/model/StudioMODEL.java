@@ -46,9 +46,9 @@ public class StudioMODEL implements Serializable
         return studio_row_count;
     }
 
-    public void setStudio_row_count(int studio_row_count)
+    public void setStudio_row_count(int studio_row_count2)
     {
-        this.studio_row_count = studio_row_count;
+        this.studio_row_count = studio_row_count2;
     }
 
     public int getStudio_col_count()

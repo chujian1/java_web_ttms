@@ -32,14 +32,14 @@ public class StudioSrv
         return studioDAO.findStudioAll();
     }
 
-    public ArrayList<StudioMODEL> findStudioById(String id)
+    public StudioMODEL findStudioById(int id)
     {
         return studioDAO.findStudioById(id);
     }
 
-    public StudioMODEL findStudioByFlag(int flag)
+    public ArrayList<StudioMODEL> findStudioByName(String studio_name)
     {
-        return studioDAO.findStudioByFlag(flag);
+        return studioDAO.findStudioByName(studio_name);
     }
 
 }

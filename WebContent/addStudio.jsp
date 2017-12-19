@@ -31,11 +31,11 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="active">Studio</a></li>
+                <li class="active"><a href="./studio.jsp">Studio</a></li>
                 <li class="disabled"><a href="#">Play</a></li>
                 <li class="disabled"><a href="#">Schedule</a></li>
                 <li class="disabled"><a href="#">User</a></li>
-                <li class="./employee.jsp"><a href="#">Employee</a></li>
+                <li><a href="./employee.jsp">Employee</a></li>
                 <li><a href="./seat.jsp">Seat</a></li>
             </ul>
         </div>

@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Studio</a></li>
+                <li class="active"><a href="./studio.jsp">Studio</a></li>
                 <li class="disabled"><a href="#">Play</a></li>
                 <li class="disabled"><a href="#">Schedule</a></li>
                 <li class="disabled"><a href="#">User</a></li>

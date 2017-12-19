@@ -35,7 +35,7 @@
                 <li class="disabled"><a href="#">Play</a></li>
                 <li class="disabled"><a href="#">Schedule</a></li>
                 <li class="disabled"><a href="#">User</a></li>
-                <li class="active"><a href="#">Employee</a></li>
+                <li class="active"><a href="./employee.jsp">Employee</a></li>
                 <li><a href="./seat.jsp">Seat</a></li>
             </ul>
         </div>

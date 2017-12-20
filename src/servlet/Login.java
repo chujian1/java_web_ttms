@@ -26,43 +26,41 @@ public class Login extends HttpServlet
             throws ServletException, IOException
     {
         // TODO:一个账号登陆后，另一个账户登录，会访问前一个账户的内容，所以登陆后需要清除原session
-        request.getSession().setAttribute("login", null);
-        request.getSession().setAttribute("admin", null);
-        request.getSession().setAttribute("user", null);
+
         request.getSession().invalidate();
         String name = request.getParameter("user");
         String pass = request.getParameter("pass");
         String result = "用户名、密码错误!";
         String page = "login.jsp";
         UserSrv userSrv = new UserSrv();
-        UserMODEL user = userSrv.findUserByNo(name).get(0);
+        UserMODEL user = userSrv.findUserByNoAndPass(name, pass);
         if(name == null || pass == null)
         {
             result = "用户名或密码不能为空";
             request.setAttribute("desc", result);
         }
         else
-            if(user.getType() == 1 && user.getEmp_no().equals(name)
-                    && user.getEmp_pass().equals(pass))
+            if(user.getType() == 1)
             {
-                request.setAttribute("name", name);
+                request.getSession().setAttribute("name", name);
                 request.getSession().setAttribute("login", "ok");
                 request.getSession().setAttribute("admin", "ok");
+                request.getSession().setAttribute("user", user);
                 page = "employee.jsp";
             }
-            else
-                if(user.getType() == 0 && user.getEmp_no().equals(name)
-                        && user.getEmp_pass().equals(pass))
-                {
-                    request.setAttribute("name", name);
-                    request.getSession().setAttribute("login", "ok");
-                    request.getSession().setAttribute("user", "ok");
-                    page = "studio.jsp";
-                }
-                else
-                {
-                    request.setAttribute("desc", result);
-                }
+        if(user.getType() == 0)
+        {
+            request.getSession().setAttribute("name", name);
+            request.getSession().setAttribute("login", "ok");
+            request.getSession().setAttribute("user", "ok");
+            request.getSession().setAttribute("user", user);
+            page = "studio.jsp";
+        }
+        if(user == null)
+        {
+            request.setAttribute("desc", result);
+        }
+
         request.getRequestDispatcher(page).forward(request, response);
     }
 

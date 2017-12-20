@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.EmployeeMODEL;
 import model.UserMODEL;
+import dao.EmployeeDAO;
 import dao.UserDAO;
 
 @WebServlet("/UserServlet")
@@ -44,8 +46,12 @@ public class UserServlet extends HttpServlet
                         if(method.equalsIgnoreCase("searchByType"))
                             searchByType(request, response);
                         else
-                            if(method.equalsIgnoreCase("searchByPage"))
-                                searchByPage(request, response);
+                            if(method.equalsIgnoreCase("searchByPage_user"))
+                                searchByPage_user(request, response);
+                            else
+                                if(method.equalsIgnoreCase("searchByPage"))
+                                    searchByPage(request, response);
+
     }
 
     private void add(HttpServletRequest request, HttpServletResponse response)
@@ -136,7 +142,7 @@ public class UserServlet extends HttpServlet
         String emp_no = request.getParameter("emp_no");
         UserDAO dao = (UserDAO) DAOFactory.creatUserDAO();
         UserMODEL user = dao.findUserByNO(emp_no);
-        System.out.print(user.getType());
+        // System.out.print(user.getType());
         request.setAttribute("user", user);
         try
         {
@@ -188,6 +194,42 @@ public class UserServlet extends HttpServlet
         try
         {
             request.getRequestDispatcher("user.jsp").forward(request, response);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    private void searchByPage_user(HttpServletRequest request, HttpServletResponse response)
+    {
+        int currentPage = 1; // 当前页默认为第一页
+        String strpage = request.getParameter("currentPage"); // 获取前台传入当前页
+        if(strpage != null && !strpage.equals(""))
+        {
+            currentPage = Integer.parseInt(strpage) < 1 ? 1 : Integer.parseInt(strpage); // 将字符串转换成整型
+        }
+        String emp_name = request.getParameter("emp_name");
+        EmployeeDAO dao = (EmployeeDAO) DAOFactory.creatEmployeeDAO();
+        // 从UserDAO中获取所有用户信息
+        ArrayList<EmployeeMODEL> list = dao.findEmployeeByPage(currentPage, emp_name);
+        // 从UserDAO中获取总记录数
+        int allCount = dao.getAllCount();
+        // 从UserDAO中获取总页数
+        int allPageCount = dao.getAllPageCount();
+        // 从UserDAO中获取当前页
+        currentPage = dao.getCurrentPage();
+
+        // 存入request中
+        request.setAttribute("allEmployee", list);
+        request.setAttribute("allCount", allCount);
+        request.setAttribute("allPageCount", allPageCount);
+        request.setAttribute("currentPage", currentPage);
+        request.setAttribute("search_emp_name", emp_name);
+
+        try
+        {
+            request.getRequestDispatcher("addUser.jsp").forward(request, response);
         }
         catch(Exception e)
         {

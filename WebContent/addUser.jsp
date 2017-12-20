@@ -30,7 +30,7 @@
         </div>
         <div class="col-sm-9">
         <div class="search" >
-            <form class="form-inline" name="myForm" action="EmployeeServlet?method=searchByPage" method="post">
+            <form class="form-inline" name="myForm" action="UserServlet?method=searchByPage_user" method="post">
                 <!-- <input type="hidden" name="method" value="search"/> -->
                 <input type="text" class="form-control" name="emp_name" value="${search_emp_name}"/>
                 <input type="submit" class="btn btn-primary" value="查   询" />&nbsp;&nbsp;

@@ -47,4 +47,11 @@ public class UserSrv
         return userDAO.findUserByType(type);
     }
 
+    public UserMODEL findUserByNoAndPass(String name, String pass)
+    {
+        // TODO 自动生成的方法存根
+
+        return userDAO.findUserByNoAndPass(name, pass);
+    }
+
 }

@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 
 @WebFilter(urlPatterns =
 { "/employee.jsp", "/user.jsp" })
-public class FilterA implements Filter
+public class user_emp implements Filter
 {
-    public FilterA()
+    public user_emp()
     {}
 
     public void destroy()

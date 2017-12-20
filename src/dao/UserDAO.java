@@ -314,4 +314,41 @@ public class UserDAO implements UserIDAO
         return null;
     }
 
+    public UserMODEL findUserByNoAndPass(String name, String pass)
+    {
+        // TODO 自动生成的方法存根
+
+        UserMODEL info = null;
+
+        Connection con = ConnectionManager.getInstance().getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try
+        {
+            // 获取所有用户数据
+            pstmt = con.prepareStatement("select * from user where emp_no = ? and emp_pass = ?");
+            pstmt.setString(1, name);
+            pstmt.setString(2, pass);
+            rs = pstmt.executeQuery();
+            if(rs.next())
+            {
+                // 如果有值的话再实例化
+                info = new UserMODEL();
+                info.setEmp_no(rs.getString("emp_no"));
+                info.setEmp_pass(rs.getString("emp_pass"));
+                info.setType(rs.getInt("type"));
+                info.setHead_path(rs.getString("head_path"));
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            ConnectionManager.close(rs, pstmt, con);
+            return info;
+        }
+    }
+
 }

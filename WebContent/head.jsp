@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 <head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -13,11 +13,16 @@
             <h1 style="text-align: center">初见TTMS</h1>
         </div>
         <div class="col-md-3">
-            <span class="glyphicon glyphicon-user"></span>
-            <a href="#">管理员 |</a>
-            <a href="#">退出</a>
+        <ul class="nav nav-tabs">
+         <li><span class="glyphicon glyphicon-user"></span></li>
+            <li><a href="#">${sessionScope.name}</a></li>
+            <li><a href="${pageContext.request.contextPath}/LoginOutServlet">退出</a></li>
+            <li id="headImg"></li>
+        </ul>
+           
         </div>
     </div>
 </div>
+</script>
 </body>
 </html>

@@ -11,18 +11,7 @@
 </head>
 
 <body style="background-image: url(./image/body.jpg)">
-<div class="page-header">
-    <div class="row">
-        <div class="col-md-9">
-            <h1 style="text-align: center">初见TTMS</h1>
-        </div>
-        <div class="col-md-3">
-            <span class="glyphicon glyphicon-user"></span>
-            <a href="#">管理员 |</a>
-            <a href="#">退出</a>
-        </div>
-    </div>
-</div>
+<%@ include file="./head.jsp" %>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
@@ -30,7 +19,7 @@
                 <li><a href="./studio.jsp">Studio</a></li>
                 <li class="disabled"><a href="#">Play</a></li>
                 <li class="disabled"><a href="#">Schedule</a></li>
-                <li class="disabled"><a href="#">User</a></li>
+                <li><a href="./user.jsp">User</a></li>
                 <li><a href="./employee.jsp">Employee</a></li>
                 <li class="active"><a href="#">Seat</a></li>
             </ul>

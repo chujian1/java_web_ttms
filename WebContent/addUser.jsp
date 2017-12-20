@@ -3,7 +3,7 @@
 <head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.EmployeeMODEL" %>
+    <%@ page import="model.EmployeeMODEL" %>
 <%@ page import="java.util.ArrayList" %>
 <% 
    String contextPath = request.getContextPath(); 
@@ -23,8 +23,8 @@
                 <li><a href="./studio.jsp">Studio</a></li>
                 <li class="disabled"><a href="#">Play</a></li>
                 <li class="disabled"><a href="#">Schedule</a></li>
-                <li><a href="./user.jsp">User</a></li>
-                <li class="active"><a href="./employee.jsp">Employee</a></li>
+                <li class="active"><a href="./user.jsp">User</a></li>
+                <li><a href="./employee.jsp">Employee</a></li>
                 <li><a href="./seat.jsp">Seat</a></li>
             </ul>
         </div>
@@ -34,7 +34,6 @@
                 <!-- <input type="hidden" name="method" value="search"/> -->
                 <input type="text" class="form-control" name="emp_name" value="${search_emp_name}"/>
                 <input type="submit" class="btn btn-primary" value="查   询" />&nbsp;&nbsp;
-                <input type="button" class="btn btn-danger" value="增   加" onclick="javascript:window.location='addEmployee.jsp'"/>
             </form>
         </div>
             <table class="table table-bordered table-hover" style="text-align:center;">
@@ -45,7 +44,7 @@
                     <th>电话</th>
                     <th>地址</th>
                     <th>邮箱</th>
-                    <th colspan=2>操作</th>
+                    <th>操作</th>
                 </tr>
                 <%
                 int currentPage=1;  //当前页
@@ -75,9 +74,8 @@
                     <th><%=list.get(i).getEmp_tel_num()%></th>
                     <th><%=list.get(i).getEmp_addr()%></th>
                     <th><%=list.get(i).getEmp_email()%></th>
-                    <th><a href="EmployeeServlet?method=searchById&emp_id=<%=list.get(i).getEmp_id()%>">修改</a></th>
-                    <th><a href="EmployeeServlet?method=delete&emp_id=<%=list.get(i).getEmp_id()%>&emp_name=${search_emp_name}&currentPage=${currentPage}">删除</a></th>
-                </tr>
+                    <th><a href="UserServlet?method=add&emp_no=<%=list.get(i).getEmp_no()%>">增加</a></th>
+                    </tr>
                 <%
                         }
                     }
@@ -85,6 +83,7 @@
                 %>
             </table>
         </div>
+        <div class="col-sm-2 control-label" style="color:red;font-weight: bold;">${result}</div>
         
         <!-- 分页 -->
         <div class="text-center">
@@ -97,7 +96,7 @@
               </ul>
             </nav>
         </div>
-    </div>
+
 </div>
 
 <script type="text/javascript" src="./js/employee.js"></script>

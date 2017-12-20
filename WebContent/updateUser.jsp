@@ -3,14 +3,14 @@
 <head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.EmployeeMODEL" %>
+<%@ page import="model.UserMODEL" %>
 <%@ page import="java.util.ArrayList" %>
 <% 
    String contextPath = request.getContextPath(); 
    request.setAttribute("contextPath", contextPath);
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Employee</title>
+<title>User</title>
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
 </head>
@@ -34,53 +34,42 @@
                 <li><a href="./studio.jsp">Studio</a></li>
                 <li class="disabled"><a href="#">Play</a></li>
                 <li class="disabled"><a href="#">Schedule</a></li>
-                <li><a href="./user.jsp">User</a></li>
-                <li class="active"><a href="./employee.jsp">Employee</a></li>
+                <li class="active"><a href="./user.jsp">User</a></li>
+                <li><a href="./employee.jsp">Employee</a></li>
                 <li><a href="./seat.jsp">Seat</a></li>
             </ul>
         </div>
         <div class="col-sm-9">
-          <form class="form-horizontal" role="form" action="EmployeeServlet?method=update" method="post">
-                <input type="hidden" name="emp_id" value="${employee.emp_id}">
+          <form class="form-horizontal" role="form" action="UserServlet?method=update" method="post">
                 <div class="form-group">
                     <label for="emp_no" class="col-sm-2 control-label">用户编号</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="emp_no" name="emp_no" pattern="[a-zA-Z0-9]{6,20}" 
                             required="required" oninvalid="setCustomValidity('请输入大小写字母和数字,长度6-20位!')" 
-                            oninput="setCustomValidity('')" value="${employee.emp_no}">
+                            oninput="setCustomValidity('')" value="${user.emp_no}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="emp_name" class="col-sm-2 control-label">用户姓名</label>
+                    <label for="emp_pass" class="col-sm-2 control-label">用户密码</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="emp_name" name="emp_name" pattern="[\u4e00-\u9fa5]{2,10}"
-                            required="required" oninvalid="setCustomValidity('请输入真实姓名,10字以内!')"
-                            oninput="setCustomValidity('')"  value="${employee.emp_name}">
+                        <input type="text" class="form-control" id="emp_pass" name="emp_pass" pattern="[0-9]{6}"
+                            required="required" oninvalid="setCustomValidity('请输入有效密码!')"
+                            oninput="setCustomValidity('')"  value="${user.emp_pass}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="emp_tel_num" class="col-sm-2 control-label">电话号码</label>
+                    <label for="type" class="col-sm-2 control-label">用户类型</label>
                     <div class="col-sm-6">
-                        <input type="tel" class="form-control" id="emp_tel_num" name="emp_tel_num" pattern="1[3-8][0-9]{9}" 
-                            required="required" oninvalid="setCustomValidity('请输入正确手机号码!')"
-                            oninput="setCustomValidity('')" value="${employee.emp_tel_num}">
+                        <input type="text" class="form-control" id="type" name="type" pattern="[0-1]{1}" 
+                            required="required" oninvalid="setCustomValidity('请输入0或1!')"
+                            oninput="setCustomValidity('')" value="${user.type}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="emp_addr" class="col-sm-2 control-label">地址</label>
+                    <label for="type" class="col-sm-2 control-label">图像</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="emp_addr" name="emp_addr" pattern=".{2,30}" 
-                            required="required" oninvalid="setCustomValidity('请输入地址!')"
-                            oninput="setCustomValidity('')" value="${employee.emp_addr}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="emp_email" class="col-sm-2 control-label">邮箱</label>
-                    <div class="col-sm-6">
-                        <input type="email" class="form-control" id="emp_email" name="emp_email"
-                            required="required"  oninvalid="setCustomValidity('请输入正确格式Email!')"
-                            pattern="([a-zA-Z0-9_-])+@[a-zA-Z0-9_-]+((\.[a-zA-Z0-9_-]{2,3}){1,2})"
-                            oninput="setCustomValidity('')" value="${employee.emp_email}">
+                        <input type="text" class="form-control" id="head_path" name="head_path" " 
+                            value="${user.head_path}">
                     </div>
                 </div>
                 <div class="form-group">
@@ -91,12 +80,11 @@
                     </div>
                 </div>
             </form>
-
-        </div>
+         </div>
 
 </div>
 
-<script type="text/javascript" src="./js/employee.js"></script>
+<script type="text/javascript" src="./js/user.js"></script>
 <script src="./bootstrap/js/jquery.min.js"></script>
 <script src="./bootstrap/js/bootstrap.min.js"></script>
 </body>

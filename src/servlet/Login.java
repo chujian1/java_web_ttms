@@ -42,7 +42,7 @@ public class Login extends HttpServlet
             request.setAttribute("desc", result);
         }
         else
-            if(user.getEmp_type() == 1 && user.getEmp_no().equals(name)
+            if(user.getType() == 1 && user.getEmp_no().equals(name)
                     && user.getEmp_pass().equals(pass))
             {
                 request.setAttribute("name", name);
@@ -51,7 +51,7 @@ public class Login extends HttpServlet
                 page = "employee.jsp";
             }
             else
-                if(user.getEmp_type() == 0 && user.getEmp_no().equals(name)
+                if(user.getType() == 0 && user.getEmp_no().equals(name)
                         && user.getEmp_pass().equals(pass))
                 {
                     request.setAttribute("name", name);

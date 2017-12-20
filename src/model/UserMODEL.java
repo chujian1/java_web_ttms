@@ -1,10 +1,13 @@
 package model;
 
-public class UserMODEL
+import java.io.Serializable;
+
+public class UserMODEL implements Serializable
 {
     private String emp_no;
     private String emp_pass;
     private int type;
+    private String head_path;
 
     public String getEmp_no()
     {
@@ -26,13 +29,24 @@ public class UserMODEL
         this.emp_pass = emp_pass;
     }
 
-    public int getEmp_type()
+    public int getType()
     {
         return type;
     }
 
-    public void setEmp_type(int type)
+    public void setType(int type)
     {
         this.type = type;
     }
+
+    public String getHead_path()
+    {
+        return head_path;
+    }
+
+    public void setHead_path(String head_path)
+    {
+        this.head_path = head_path;
+    }
+
 }

@@ -196,7 +196,7 @@ public class EmployeeServlet extends HttpServlet
 
         try
         {
-            request.getRequestDispatcher("employee.jsp").forward(request, response);
+            request.getRequestDispatcher("addUser.jsp").forward(request, response);
         }
         catch(Exception e)
         {

@@ -12,9 +12,9 @@ public class UserSrv
 {
     private UserDAO userDAO = DAOFactory.creatUserDAO();
 
-    public boolean add(UserMODEL user)
+    public boolean add(String userNo)
     {
-        return userDAO.insert(user);
+        return userDAO.insert(userNo);
     }
 
     public boolean update(UserMODEL user)
@@ -22,9 +22,9 @@ public class UserSrv
         return userDAO.update(user);
     }
 
-    public boolean delete(int ID)
+    public boolean delete(String NO)
     {
-        return userDAO.delete(ID);
+        return userDAO.delete(NO);
     }
 
     public List<UserMODEL> FetchAll()
@@ -35,6 +35,11 @@ public class UserSrv
     public ArrayList<UserMODEL> findUserByNo(String no)
     {
         return userDAO.findUserByNo(no);
+    }
+
+    public UserMODEL findUserByNO(String no)
+    {
+        return userDAO.findUserByNO(no);
     }
 
     public UserMODEL findUserByType(int type)

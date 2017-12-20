@@ -79,20 +79,31 @@ public class UserServlet extends HttpServlet
 
         UserDAO dao = (UserDAO) DAOFactory.creatUserDAO();
         result = dao.delete(emp_no);
-        if(result)
-            request.setAttribute("result", "删除成功!");
-        else
-            request.setAttribute("result", "删除失败!");
-        // 不分页时删除调用全查
-        search(request, response);
-        // 分页时删除调用分页全查:使用分页index1.jsp时，把这里注释打开
-        searchByPage(request, response);
+        try
+        {
+            if(result)
+            {
+                request.setAttribute("result", "删除成功!");
+                request.getRequestDispatcher("user.jsp").forward(request, response);
+
+            }
+            else
+                request.setAttribute("result", "删除失败!");
+            // 不分页时删除调用全查
+            // search(request, response);
+            // 分页时删除调用分页全查:使用分页index1.jsp时，把这里注释打开
+            searchByPage(request, response);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
 
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response)
     {
-        System.out.println("aaaaaaaaaaaaaaaaaaa");
+
         String emp_no = request.getParameter("emp_no");
         String emp_pass = request.getParameter("emp_pass");
         int type = Integer.parseInt(request.getParameter("type"));
@@ -102,7 +113,7 @@ public class UserServlet extends HttpServlet
         user.setEmp_pass(emp_pass);
         user.setType(type);
         user.setHead_path(head_path);
-        System.out.println(user.getHead_path());
+
         UserDAO dao = (UserDAO) DAOFactory.creatUserDAO();
         boolean result = dao.update(user);
         try

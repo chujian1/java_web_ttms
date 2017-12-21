@@ -21,7 +21,11 @@
                 <li class="disabled"><a href="#">Schedule</a></li>
                 <li><a href="./user.jsp">User</a></li>
                 <li><a href="./employee.jsp">Employee</a></li>
-                <li class="active"><a href="#">Seat</a></li>
+                <li><a href="#">Seat</a></li>
+                <li class="active"><a href="#">1号厅</a></li>
+                <li><a href="#">2号厅</a></li>
+                <li><a href="#">3号厅</a></li>
+                <li><a href="#">4号厅</a></li>
             </ul>
         </div>
         <div class="col-sm-9">

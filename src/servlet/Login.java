@@ -33,6 +33,7 @@ public class Login extends HttpServlet
         String result = "用户名、密码错误!";
         String page = "login.jsp";
         UserSrv userSrv = new UserSrv();
+        UserMODEL user_1 = userSrv.findUserByNO(name);
         UserMODEL user = userSrv.findUserByNoAndPass(name, pass);
         if(name == null || pass == null)
         {
@@ -40,26 +41,29 @@ public class Login extends HttpServlet
             request.setAttribute("desc", result);
         }
         else
-            if(user.getType() == 1)
+            if(user_1.getType() == 1 && user_1.getEmp_pass().equals(pass))
             {
+
                 request.getSession().setAttribute("name", name);
                 request.getSession().setAttribute("login", "ok");
                 request.getSession().setAttribute("admin", "ok");
                 request.getSession().setAttribute("user", user);
                 page = "employee.jsp";
             }
-        if(user.getType() == 0)
-        {
-            request.getSession().setAttribute("name", name);
-            request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("user", "ok");
-            request.getSession().setAttribute("user", user);
-            page = "studio.jsp";
-        }
-        if(user == null)
-        {
-            request.setAttribute("desc", result);
-        }
+            else
+                if(user_1.getType() == 0 && user_1.getEmp_pass().equals(pass))
+                {
+                    request.getSession().setAttribute("name", name);
+                    request.getSession().setAttribute("login", "ok");
+                    request.getSession().setAttribute("user", "ok");
+                    request.getSession().setAttribute("user", user);
+                    page = "studio.jsp";
+                }
+                else
+                {
+                    System.out.println("aaaaaaaaa");
+                    request.setAttribute("desc", result);
+                }
 
         request.getRequestDispatcher(page).forward(request, response);
     }

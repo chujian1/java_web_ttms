@@ -17,7 +17,9 @@
             <div class="form-group">
                 <label type="text" for="inputUser" class="col-sm-2 control-label">User</label>
                 <div class="col-sm-offset-1 col-sm-8">
-                    <input type="text" class="form-control" name="user" id="inputUser" placeholder="User"  required autofocus><span id="tip"></span>
+                    <input type="text" class="form-control" name="user" id="inputUser" placeholder="User" autofocus pattern="[a-zA-Z0-9]{6,20}" 
+                            required="required" oninvalid="setCustomValidity('请输入有效用户名!')" 
+                            oninput="setCustomValidity('')" ><span id="tip"></span>
                 </div>
             </div>
             <div class="form-group">

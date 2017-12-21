@@ -113,7 +113,7 @@ public class UserServlet extends HttpServlet
         String emp_no = request.getParameter("emp_no");
         String emp_pass = request.getParameter("emp_pass");
         int type = Integer.parseInt(request.getParameter("type"));
-        String head_path = request.getParameter("head_path");
+        String head_path = "/image/2.jpg";
         UserMODEL user = new UserMODEL();
         user.setEmp_no(emp_no);
         user.setEmp_pass(emp_pass);
@@ -236,4 +236,5 @@ public class UserServlet extends HttpServlet
             e.printStackTrace();
         }
     }
+
 }

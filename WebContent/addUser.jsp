@@ -89,10 +89,10 @@
         <div class="text-center">
             <nav>
               <ul class="pagination">
-                <li><a href="EmployeeServlet?method=searchByPage&currentPage=1&emp_name=${search_emp_name}">首页</a></li>
-                <li><a href="EmployeeServlet?method=searchByPage&currentPage=<%=(currentPage-1)<1?1:(currentPage-1)%>&emp_name=${search_emp_name}">上一页</a></li>
-                <li><a href="EmployeeServlet?method=searchByPage&currentPage=<%=(currentPage+1)>allPageCount?allPageCount:(currentPage+1)%>&emp_name=${search_emp_name}">下一页</a></li>
-                <li><a href="EmployeeServlet?method=searchByPage&currentPage=<%=allPageCount%>&emp_name=${search_emp_name}">末页</a></li>
+                <li><a href="UserServlet?method=searchByPage_user&currentPage=1&emp_name=${search_emp_name}">首页</a></li>
+                <li><a href="UserServlet?method=searchByPage_user&currentPage=<%=(currentPage-1)<1?1:(currentPage-1)%>&emp_name=${search_emp_name}">上一页</a></li>
+                <li><a href="UserServlet?method=searchByPage_user&currentPage=<%=(currentPage+1)>allPageCount?allPageCount:(currentPage+1)%>&emp_name=${search_emp_name}">下一页</a></li>
+                <li><a href="UserServlet?method=searchByPage_user&currentPage=<%=allPageCount%>&emp_name=${search_emp_name}">末页</a></li>
               </ul>
             </nav>
         </div>

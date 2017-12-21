@@ -15,18 +15,7 @@
 <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
 </head>
 <body style="background-image: url(./image/body.jpg)">
-<div class="page-header">
-    <div class="row">
-        <div class="col-md-9">
-            <h1 style="text-align: center">初见TTMS</h1>
-        </div>
-        <div class="col-md-3">
-            <span class="glyphicon glyphicon-user"></span>
-            <a href="#">管理员 |</a>
-            <a href="#">退出</a>
-        </div>
-    </div>
-</div>
+<%@ include file="./head.jsp" %>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
@@ -40,6 +29,7 @@
             </ul>
         </div>
         <div class="col-sm-9">
+        
           <form class="form-horizontal" role="form" action="UserServlet?method=update" method="post">
                 <div class="form-group">
                     <label for="emp_no" class="col-sm-2 control-label">用户编号</label>
@@ -65,13 +55,20 @@
                             oninput="setCustomValidity('')" value="${user.type}">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="type" class="col-sm-2 control-label">图像</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="head_path" name="head_path" " 
-                            value="${user.head_path}">
-                    </div>
-                </div>
+                 <div class="form-group">
+                            <label class="col-sm-2 control-label">头像</label>
+                            <div class="col-sm-6">
+                                <img class="img-rounded img-responsive" style="width: 22%"
+                                     src="${pageContext.request.contextPath}${user.head_path}" alt="头像"><br>
+                                     <a class="btn btn-primary" >
+                                <input unselectable="on" type="file" style="position: absolute;display: block!important;width: 82px;opacity: 0;" name="part">
+                                更改头像
+                            </a>
+                            </div>
+
+                            
+
+                        </div>
                 <div class="form-group">
                     <div class="col-sm-2 control-label" style="color:red;font-weight: bold;">${result}</div>
                     <div class="col-sm-6">

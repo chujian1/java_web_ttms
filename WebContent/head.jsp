@@ -10,14 +10,14 @@
 <div class="page-header">
     <div class="row">
         <div class="col-md-9">
-            <h1 style="text-align: center">初见TTMS</h1>
+            <h1 style="text-align: center">TTMS</h1>
         </div>
         <div class="col-md-3">
         <ul class="nav nav-tabs">
-         <li><span class="glyphicon glyphicon-user"></span></li>
             <li><a href="#">${sessionScope.name}</a></li>
             <li><a href="${pageContext.request.contextPath}/LoginOutServlet">退出</a></li>
-            <li id="headImg"></li>
+            <li id="headImg"><img class="img-rounded img-responsive" style="width: 60px; bordr-radius: 50%;"
+                                     src="${pageContext.request.contextPath}${user.head_path}" alt="头像"></li>
         </ul>
            
         </div>

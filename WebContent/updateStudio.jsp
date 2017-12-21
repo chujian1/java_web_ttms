@@ -15,18 +15,7 @@
 <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
 </head>
 <body style="background-image: url(./image/body.jpg)">
-<div class="page-header">
-    <div class="row">
-        <div class="col-md-9">
-            <h1 style="text-align: center">初见TTMS</h1>
-        </div>
-        <div class="col-md-3">
-            <span class="glyphicon glyphicon-user"></span>
-            <a href="#">管理员 |</a>
-            <a href="#">退出</a>
-        </div>
-    </div>
-</div>
+<%@ include file="./head.jsp" %>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">

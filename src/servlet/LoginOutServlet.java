@@ -42,6 +42,7 @@ public class LoginOutServlet extends HttpServlet
             throws ServletException, IOException
     {
         // TODO Auto-generated method stub
+        System.out.println("fgujhjvdusuhfhhhhhhh");
         request.getSession().invalidate();
         response.sendRedirect("login.jsp");
     }

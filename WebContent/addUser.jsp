@@ -14,7 +14,9 @@
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
 </head>
-<body style="background-image: url(./image/body.jpg)">
+<body style="background-image: url(./image/background.jpg); background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;">
 <%@ include file="./head.jsp" %>
 <div class="container-fluid">
     <div class="row">

@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="./css/seat.css">
 </head>
 
-<body style="background-image: url(./image/body.jpg)">
+<body style="background-image: url(./image/background.jpg); background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;"">
 <%@ include file="./head.jsp" %>
 <div class="container-fluid">
     <div class="row">

@@ -88,17 +88,13 @@ public class UploadServlet extends HttpServlet
             }
 
             // 将上传参数及文件路径存入vo类
-            Play play = new Play();
-            play.setPlayName(play_name);
-            play.setPlayType(play_type);
-            play.setPlayLang(play_lang);
-            play.setPlayIntroduction(play_introduction);
-            play.setPlayLength(Integer.parseInt(play_length));
-            play.setPlayTicketPrice(Float.parseFloat(play_ticket_price));
-            // 只传递相对路径
-            play.setPlayImage("jsp\\" + myFileName);
-
-            request.setAttribute("play", play);
+            /*
+             * Play play = new Play(); play.setPlayName(play_name); play.setPlayType(play_type);
+             * play.setPlayLang(play_lang); play.setPlayIntroduction(play_introduction);
+             * play.setPlayLength(Integer.parseInt(play_length));
+             * play.setPlayTicketPrice(Float.parseFloat(play_ticket_price)); // 只传递相对路径
+             * play.setPlayImage("jsp\\" + myFileName); request.setAttribute("play", play);
+             */
             // 带着play对象转发到result.java页
             request.getRequestDispatcher("result.jsp").forward(request, response);
 

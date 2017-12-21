@@ -8,11 +8,13 @@
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
 </head>
-<body style="background-image: url(./image/body.jpg)">
+<body style="background-image: url(./image/background.jpg); background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;">
     <div class="page-header" >
-        <h1 style="text-align:center;">初见TTMS</h1>
+        <h1 style="text-align:center;">欢迎登录TTMS</h1>
     </div>
-    <div class="container-fluid" style="border:solid black ;width:25%;margin-top:70px;">
+    <div class="container-fluid" style="border:solid black 1px;border-radius:30%;width:25%;margin-top:70px;">
         <form action="Login" method="post" name="form" class="form-horizontal" style="padding:20px;">
             <div class="form-group">
                 <label type="text" for="inputUser" class="col-sm-2 control-label">User</label>
@@ -32,9 +34,9 @@
                 <button type="submit" value="提交" class="btn btn-primary ">Sign in</button>
             </div>
         </form>
-        <div> ${desc}</div>
+      
     </div>
-    
+      <div style="color:red;text-align:center"> ${desc}</div>
    
 <script type="text/javascript" src="./js/login.js"></script>
 <script src="./bootstrap/js/jquery.min.js"></script>

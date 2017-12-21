@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-3">
         <ul class="nav nav-tabs">
-            <li><a href="#">${sessionScope.name}</a></li>
+            <li><form name="myForm" action="EmployeeServlet?method=searchByNo" method="post"><a href="#">${sessionScope.name}</a></form></li>
             <li><a href="${pageContext.request.contextPath}/LoginOutServlet">退出</a></li>
             <li id="headImg"><img class="img-rounded img-responsive" style="width: 60px; bordr-radius: 50%;"
                                      src="${pageContext.request.contextPath}${user.head_path}" alt="头像"></li>

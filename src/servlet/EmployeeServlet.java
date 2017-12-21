@@ -40,6 +40,7 @@ public class EmployeeServlet extends HttpServlet
                 else
                     if(method.equalsIgnoreCase("search"))
                         search(request, response);
+
                     else
                         if(method.equalsIgnoreCase("searchById"))
                             searchById(request, response);
